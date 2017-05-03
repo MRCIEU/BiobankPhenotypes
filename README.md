@@ -2,4 +2,4 @@
 
 Phenotype submission - https://github.com/MRCIEU/BiobankPhenotypes/wiki
 
-Code -  https://github.com/MRCIEU/BiobankGWAS
+Pipeline code -  https://github.com/MRCIEU/BiobankGWAS
