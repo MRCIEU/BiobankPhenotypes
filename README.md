@@ -6,16 +6,15 @@ Pipeline code -  https://github.com/MRCIEU/BiobankGWAS
 
 Phenotype creation:
 
-UK Biobank Pheno Extractor
-===================
+## UK Biobank Pheno Extractor
 
 Extract required variables from UK Biobank R files without loading everything to memory. Still requires that there is enough RAM to fit extracted variables in.
 
-## Requires
+### Requires
 - Python 2.7
 - Pandas (Python module)
 
-## Run
+### Run
 
 ```
 usage: extractUKBBpheno_v0.2.py [-h] --indata <file> [<file> ...] --req <file>
@@ -33,16 +32,16 @@ arguments:
   --sep <str>           Column separator (default: tab)
 ```
 
-### In data files
+#### In data files
 Input data must be tab file from the `.../data/derived/format/r/` directory. Multiple tab files can be provided and variables will be merged using column 1 (eid) as an index.
 
-### Link file
+#### Link file
 Comma separated file with header on first line. Column 1 is your project specific ID, column 2 is the genetic IDs.
 
-### Required variables list
+#### Required variables list
 Is a file where the first column is a list of variable IDs that are needed. IDs are the same as those in the Data Showcase.
 
-### Example
+#### Example
 `required_variables.txt`:
 
 ```
