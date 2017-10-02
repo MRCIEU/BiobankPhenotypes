@@ -61,7 +61,7 @@ Script:
 
 datadir=/path/to/data/derived/format/r
 
-python extractUKBBpheno_v0.1.py \
+python extractUKBBpheno_v0.2.py \
   --indata $datadir/data.4263.tab $datadir/data.4894.tab $datadir/data.5013.tab \
   --link linker_file.csv
   --req required_variables.txt \
