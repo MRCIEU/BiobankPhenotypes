@@ -14,13 +14,13 @@ def main():
     # Args
     args = parse_arguments()
 
-    print 'Load list of required variables'
+    print('Load list of required variables')
     reqvars = load_file_to_list(args.req, 0, args.sep)
 
-    print 'Check required variales are in data files'
+    print('Check required variales are in data files')
     check_variables_available(reqvars, args.indata, args.sep)
 
-    print 'Extract required variables from each dataset separately'
+    print('Extract required variables from each dataset separately')
     reqdata = []
     for infile in args.indata:
         # Find names of columns to extract
@@ -30,14 +30,14 @@ def main():
                          header=0, dtype=str)
         reqdata.append(df)
 
-    print 'Concatenate into a single data frame'
+    print('Concatenate into a single data frame')
     outdf = pd.concat(reqdata, axis=1)
     # Order columns based on input list
     colorder = sorted(list(outdf.columns),
                       key=lambda col: reqvars.index(col.split(".")[1]))
     outdf = outdf.loc[:, colorder]
 
-    print 'Link projectID to geneticID'
+    print('Link projectID to geneticID')
     outdf.insert(0, "projectID", outdf.index)
     if args.link:
         # Load linker IDs to dictionary
