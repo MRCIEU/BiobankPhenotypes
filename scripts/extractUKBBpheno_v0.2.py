@@ -85,9 +85,9 @@ def check_variables_available(reqvars, indata, sep="\t", quit=True):
             notpresent.append(reqvar)
     # Quit if any variables not present
     if len(notpresent) > 0:
-        print "Error: Variables not present in datasets:"
+        print("Error: Variables not present in datasets:")
         for var in notpresent:
-            print " {0}".format(var)
+            print(" {0}".format(var))
         if quit:
             sys.exit("Exiting!")
 
